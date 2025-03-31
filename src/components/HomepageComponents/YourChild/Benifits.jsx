@@ -1,22 +1,26 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import COLORS from '../../../constants/color';
 
-const Benifits = () => {
+const Benifits = ({title, subtitle, duration}) => {
   return (
     <View
       style={{
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: COLORS.white,
         borderRadius: 12,
         padding: 12,
         marginVertical: 6,
+        minHeight: 70,
         shadowColor: '#000',
-        shadowOpacity: 0.1,
-        shadowOffset: {width: 0, height: 2},
-        shadowRadius: 4,
-        elevation: 3,
+        shadowOpacity: 0.03, // Slightly increased opacity for visibility
+        shadowOffset: {width: 0, height: 1}, // Minimal offset
+        shadowRadius: 3, // Reduced spread for a subtle effect
+        elevation: 1, // Lower elevation for a softer look
+        borderWidth: 0.5, // Thinner border
+        borderColor: 'rgba(0, 0, 0, 0.1)', // Lighter border with transparency
       }}>
       <Icon
         name="brain-outline"
@@ -27,23 +31,23 @@ const Benifits = () => {
 
       <View style={{flex: 1}}>
         <Text style={{fontSize: 16, fontWeight: 'bold', color: '#000'}}>
-          Colors & Shapes
+          {title}
         </Text>
         <Text style={{fontSize: 13, color: '#666', marginTop: 3}}>
-          Recognizing basic colors and geometric shapes
+          {subtitle}
         </Text>
       </View>
 
       <View
         style={{
-          backgroundColor: '#E6FAEA',
+          backgroundColor: '#DCFCE7',
           paddingHorizontal: 10,
           paddingVertical: 4,
           borderRadius: 12,
-          marginRight: 8,
+          alignSelf: 'flex-start',
         }}>
         <Text style={{color: '#2D9C5B', fontSize: 12, fontWeight: 'bold'}}>
-          3 Months
+          {duration}
         </Text>
       </View>
 

@@ -1,22 +1,20 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import COLORS from '../../../constants/color';
 
 const Event = ({title, description}) => {
   return (
     <View style={styles.card}>
-      {/* Image Section */}
       <Image
         source={require('../../../assets/images/Events.jpeg')}
         style={styles.image}
       />
 
-      {/* Text Content */}
       <View style={styles.content}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{description}</Text>
 
-        {/* Session Details */}
         <View style={styles.detailsRow}>
           <View style={styles.detail}>
             <Icon name="time-outline" size={16} color="#425466" />
@@ -40,7 +38,6 @@ const Event = ({title, description}) => {
           </View>
         </View>
 
-        {/* Book Button */}
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Book a Section</Text>
         </TouchableOpacity>
@@ -54,7 +51,7 @@ export default Event;
 const styles = StyleSheet.create({
   card: {
     width: 300,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.white,
     paddingBottom: 12,
     borderRadius: 5,
     shadowColor: '#0C1A4B',

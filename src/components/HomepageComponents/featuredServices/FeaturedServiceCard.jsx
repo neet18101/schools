@@ -10,6 +10,7 @@ export const FeaturedServiceCard = ({heading, para}) => {
         width: 160,
         borderRadius: 10,
         overflow: 'hidden',
+        marginTop: 10,
       }}>
       <ImageBackground
         style={{height: '100%', width: '100%'}}
