@@ -8,6 +8,7 @@ import OnboardingScreen from './src/screens/OnboardingScreen';
 import BootSplash from 'react-native-bootsplash';
 import LoginScreen from './src/screens/LoginScreen';
 import OtpScreen from './src/screens/OtpScreen';
+import HomePage from './src/screens/HomePageScreen';
 const App = () => {
   const Stack = createStackNavigator();
   useEffect(() => {
@@ -33,6 +34,7 @@ const App = () => {
         />
         <Stack.Screen name={SCREENS.LOGIN_SCREEN} component={LoginScreen} />
         <Stack.Screen name={SCREENS.OTP_SCREEN} component={OtpScreen} />
+        <Stack.Screen name={SCREENS.HOMEPAGE_SCREEN} component={HomePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
