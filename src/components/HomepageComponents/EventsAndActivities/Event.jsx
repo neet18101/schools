@@ -2,8 +2,10 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import COLORS from '../../../constants/color';
+import {useNavigation} from '@react-navigation/native';
 
 const Event = ({title, description}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.card}>
       <Image
@@ -38,7 +40,9 @@ const Event = ({title, description}) => {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('ReDirect')}>
           <Text style={styles.buttonText}>Book a Section</Text>
         </TouchableOpacity>
       </View>

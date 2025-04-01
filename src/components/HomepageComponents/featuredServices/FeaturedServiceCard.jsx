@@ -1,8 +1,10 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 export const FeaturedServiceCard = ({heading, para}) => {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -60,7 +62,8 @@ export const FeaturedServiceCard = ({heading, para}) => {
                 paddingHorizontal: 15,
                 borderRadius: 5,
               }}
-              title="Book a now">
+              title="Book a now"
+              onPress={() => navigation.navigate('ReDirect')}>
               <Text style={{fontSize: 10, fontWeight: '600', color: '#fff'}}>
                 Book a now
               </Text>

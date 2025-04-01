@@ -7,6 +7,7 @@ import {
   Dimensions,
   StyleSheet,
 } from 'react-native';
+import AssetsStock from '../../../constants/ImagesContants';
 
 const {width} = Dimensions.get('window');
 
@@ -15,19 +16,19 @@ const banners = [
     id: '1',
     title: 'Personalized Learning for Your Child!',
     subtitle: 'Choose Their Age Group to Begin',
-    image: require('../../../assets/images/baby.png'),
+    image: AssetsStock.baby,
   },
   {
     id: '2',
     title: 'Fun Learning Experience!',
     subtitle: 'Engaging activities for kids',
-    image: require('../../../assets/images/baby.png'),
+    image: AssetsStock.baby,
   },
   {
     id: '3',
     title: 'Start Their Journey Today!',
     subtitle: 'Interactive and enjoyable lessons',
-    image: require('../../../assets/images/baby.png'),
+    image: AssetsStock.baby,
   },
 ];
 
@@ -39,13 +40,13 @@ const BannerItem = ({item}) => (
     </View>
     <View
       style={{width: '45%', alignItems: 'flex-end', justifyContent: 'center'}}>
-      <Image style={styles.image} source={item.image} />
+      <Image style={styles.image} source={AssetsStock.baby} />
     </View>
   </View>
 );
 
 const BannerCarousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   const flatListRef = useRef(null);
 
   const handleScroll = event => {
@@ -66,7 +67,6 @@ const BannerCarousel = () => {
         onScroll={handleScroll}
         scrollEventThrottle={16}
       />
-      {/* Pagination Indicator */}
       <View style={styles.pagination}>
         {banners.map((_, index) => (
           <View

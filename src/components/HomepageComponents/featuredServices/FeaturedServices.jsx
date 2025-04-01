@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, View, FlatList} from 'react-native';
+import {View, FlatList} from 'react-native';
 import {FeaturedServiceCard} from './FeaturedServiceCard';
 import Heading from '../SmallComponents/Heading';
 

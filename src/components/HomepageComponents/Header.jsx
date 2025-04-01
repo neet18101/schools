@@ -1,11 +1,13 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
+import Menu from 'react-native-vector-icons/Entypo';
 import {useNavigation} from '@react-navigation/native';
 import COLORS from '../../constants/color';
 
 const Header = () => {
   const navigation = useNavigation();
+
   const getFormattedDate = () => {
     const today = new Date();
     return new Intl.DateTimeFormat('en-US', {
@@ -15,28 +17,38 @@ const Header = () => {
       day: 'numeric',
     }).format(today);
   };
-  console.log(getFormattedDate()); // Check if it's logging the correct date
+
+  const getGreeting = () => {
+    const hours = new Date().getHours();
+    if (hours < 16) {
+      return 'Good Morning';
+    } else {
+      return 'Good Evening';
+    }
+  };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.menuButton}
         onPress={() => navigation.openDrawer()}>
-        <Icon name="menu" size={18} color="#000000" />
+        <Menu name="menu" size={18} color="#000000" />
       </TouchableOpacity>
       <View style={styles.middleSection}>
         <View>
-          <Text style={styles.greetingText}>Good Evening</Text>
+          <Text style={styles.greetingText}>{getGreeting()}</Text>
           <Text style={styles.dateText}>{getFormattedDate()}</Text>
         </View>
-        <View style={styles.talkToExpertButton}>
+        <TouchableOpacity style={styles.talkToExpertButton}>
           <Icon name="phone" size={12} color="#571D99" />
           <Text style={styles.talkToExpertText}>Talk to Expert</Text>
-        </View>
+        </TouchableOpacity>
       </View>
-      <View style={styles.mapButton}>
-        <Icon name="map" size={12} color="#571D99" />
-      </View>
+      <TouchableOpacity
+        style={styles.mapButton}
+        onPress={() => navigation.navigate('ReDirect')}>
+        <Icon name="map-pin" size={12} color="#571D99" />
+      </TouchableOpacity>
     </View>
   );
 };

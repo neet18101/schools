@@ -10,23 +10,26 @@ import {
 import React from 'react';
 import Heading from '../SmallComponents/Heading';
 import COLORS from '../../../constants/color';
+import {useNavigation} from '@react-navigation/native';
+import AssetsStock from '../../../constants/ImagesContants';
 
 const AgeSection = () => {
+  const navigation = useNavigation();
   const ageGroups = [
     {
       id: '1',
       label: '2-3 Years',
-      image: require('../../../assets/images/age2.png'),
+      image: AssetsStock.age2,
     },
     {
       id: '2',
       label: '3-4 Years',
-      image: require('../../../assets/images/age3.png'),
+      image: AssetsStock.age3,
     },
     {
       id: '3',
       label: '4-5 Years',
-      image: require('../../../assets/images/age4.png'),
+      image: AssetsStock.age4,
     },
   ];
   const {width} = useWindowDimensions();
@@ -39,7 +42,7 @@ const AgeSection = () => {
         {ageGroups.map(item => (
           <TouchableOpacity
             key={item.id}
-            onPress={() => console.log(`${item.label} Selected`)}
+            onPress={() => navigation.navigate('ReDirect')}
             style={styles.card}>
             <Image source={item.image} style={styles.image} />
             <Text style={styles.label}>{item.label}</Text>

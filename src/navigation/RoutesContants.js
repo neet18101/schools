@@ -5,4 +5,5 @@ export const SCREENS = {
   REGISTER_SCREEN: 'Register',
   OTP_SCREEN: 'OtpScreen',
   HOMEPAGE_SCREEN: 'Homepage',
+  REDIRECT: 'ReDirect',
 };

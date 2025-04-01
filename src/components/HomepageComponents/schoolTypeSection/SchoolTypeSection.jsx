@@ -1,22 +1,17 @@
 import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
 
 import React from 'react';
+import AssetsStock from '../../../constants/ImagesContants';
 
 export const SchoolTypeSection = () => {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Image
-          source={require('../../../assets/images/school1.jpeg')}
-          style={styles.image}
-        />
+        <Image source={AssetsStock.Pre_School} style={styles.image} />
         <Text style={styles.title}>Preschool</Text>
       </View>
       <View style={styles.card}>
-        <Image
-          source={require('../../../assets/images/school1.jpeg')}
-          style={styles.image}
-        />
+        <Image source={AssetsStock.Day_Care} style={styles.image} />
         <Text style={styles.title}>Day care</Text>
       </View>
     </View>
