@@ -1,5 +1,4 @@
-import {View, ScrollView} from 'react-native';
-
+import {View, ScrollView, StyleSheet} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../components/HomepageComponents/Header';
@@ -13,13 +12,17 @@ import SkillPage from '../components/HomepageComponents/LifeSkills/skillPage';
 import QuizCard from '../components/HomepageComponents/Quiz/QuizCard';
 import UpSkilling from '../components/HomepageComponents/upSkills/UpSkilling';
 import YourChild from '../components/HomepageComponents/YourChild/YourChild';
+import COLORS from '../constants/color';
 
 const HomePage = () => {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <View style={{backgroundColor: '#FFFFFF', flex: 1}}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.innerContainer}>
         <Header />
-        <ScrollView style={{padding: 10}}>
+        <ScrollView
+          style={styles.scrollView}
+          showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled">
           <BannerCarousel />
           <SchoolTypeSection />
           <AgeSection />
@@ -35,5 +38,19 @@ const HomePage = () => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.white,
+  },
+  innerContainer: {
+    // flex: 1,
+    backgroundColor: COLORS.white,
+  },
+  scrollView: {
+    padding: 10,
+  },
+});
 
 export default HomePage;

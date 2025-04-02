@@ -92,7 +92,7 @@ const YourChild = () => {
   const [selectedAge, setSelectedAge] = useState('2-3');
 
   return (
-    <View style={{marginTop: 20, marginBottom: 20}}>
+    <View style={{marginTop: 20, marginBottom: 70}}>
       <Heading message="Your Child's Learning Journey" />
       <View style={{marginTop: 10}}>
         <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
