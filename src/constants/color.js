@@ -10,7 +10,7 @@ const COLORS = {
   green_color: '#16A34A',
   background: '#fff',
   text_gray: '#696969',
+  border: '#D9D9D9',
 };
 
 export default COLORS;
-    
